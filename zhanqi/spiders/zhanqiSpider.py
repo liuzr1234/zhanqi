@@ -25,6 +25,7 @@ class ZhanqiSpider(scrapy.Spider):
         item['actor_name'] = sel.xpath('//div[@class="meat"]/span[@class="anchor anchor-to-cut dv"]/text()').extract()
         item['program_name'] = sel.xpath('//div[@class="info-area"]/span[@class="name"]/text()').extract()
         #item['picture_url'] = sel.xpath('//div[@class="imgBox"]/img/@src').extract()
-
+        for i in item['actor_name']:
+            print i
 
         yield item
